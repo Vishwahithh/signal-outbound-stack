@@ -13,7 +13,9 @@ import csv, json, re, sys
 from common import config, jl, run_dir
 
 BANNED = ["congrat", "impressive", "great ", "exciting", "i hope this", "quick question", "i imagine", "i suspect", "my guess",
-          "hope you", "just checking", "reaching out", "touch base", "leverage", "synerg", "i'm curious", "i am curious", "i noticed"]
+          "hope you", "just checking", "reaching out", "touch base", "leverage", "synerg", "i'm curious", "i am curious", "i noticed",
+          # overclaims a fact-check found in autoresearch (12 Oct 2026): the sender cannot know a case had "the same question"
+          "same question", "had the same", "came up with", "faced the same", "other teams", "other platforms", "if useful"]
 MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
 PITCH = ["call", "outline", "help you", "offer", "sent you", "my email", "free"]
 SUBJECT_BAN = ["offer", "discount", "free", "deal", "cost", "urgent", "re:", "fwd:", "!"]  # templates/reference/subject_lines.md

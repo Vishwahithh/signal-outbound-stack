@@ -31,3 +31,11 @@
 **outcome:**  researched 7.9 vs 7.5, human 5.6 vs 6.0 (dragged by that splice), accurate 8/8 vs 2/8, out-of-market lead correctly skipped
 **status:**   shipped
 **postable:** yes, "making the AI write only facts it could cite cost nothing in quality and fixed every made-up claim"
+
+## 2026-10-12
+**what:**     copy rules from 3 rounds of blind autoresearch + a full-dossier fact-check: one fact in line one, short sentences, no linked facts, proof opt-in as one plain fact, no "same question" bridges or wider-experience claims; copy_check bans those phrases
+**why:**      the round winners raised the blind score from 48.8 to 74.4 with 8/8 fact-checked accuracy
+**broke:**    blind reviewers mark true-but-obscure facts as unverifiable; accuracy now comes from a fact-checker with the full research
+**outcome:**  every fact-check failure was one of: "same question" framing, details added to a case, "other teams" claims, "usually" experience claims, two facts wrongly linked
+**status:**   shipped
+**postable:** yes, "an AI fact-checker found every lie in our AI copy was about the sender, never about the prospect"

@@ -48,6 +48,18 @@ answers, the event itself). Siblings at one company get different subjects. Neve
   the shared problem ("the same question came up with a SaaS business"), never a claim to work in their sector.
 - If owns_pricing is not "yes", ask about what they own; the close may ask once, plainly, who owns the pricing call.
 
+## Structure and proof (won three blind rounds of autoresearch, checked against the full research by a fact-checker)
+- Line one carries ONE fact: one date, at most one product name, at most one quote. Other facts are dropped.
+- No sentence over 25 words, no semicolons, no sentence joining two facts. At most two of their product, tier or plan
+  names; a price ladder is named end to end or not at all. Never count their things ("four offerings").
+- Never link two facts the sources do not link (a quote was not written "when" a launch happened unless both dates say so).
+- Proof is opt-in: a case goes in only if it solved the very problem the email asks about, at most one email in three
+  across a batch. Stated as one plain sentence of fact (descriptor + what was done + the number, exactly as the proof
+  list), never "the same question came up with...", "had the same", "faced the same", and nothing added about the case
+  (how they chose, how they framed it) in the close. When proof is dropped, the sender line stands alone.
+- No claims about the sender's wider experience: no "other teams/platforms", no "usually / tends to / the test I use".
+- A low-friction close tied to the question works: "Reply 'yes' and I'll send a one-page sketch of both options."
+
 ## Hard rules
 {{COPY_RULES}}
 - no links or domain-shaped text, no em dashes, no exclamation marks, no praise ("impressive", "great",
