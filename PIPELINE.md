@@ -13,10 +13,10 @@ added after skipping it cost real money or a real domain.
               small markets (ABM): 3-5 contacts per account (CEO, CRO, CFO, product lead)
 6 COPY        opener on the event + one question about the specific new thing + one approved proof
               QA + a prospect-eye review of a sample                                     <- GATE 4: client approves samples
-7 LAUNCH      dedicated inboxes per client (warmup confirmed ON, reputation >= 92%, seed test, ramp)
+7 LAUNCH      inbox_health.py (warmup ON, reputation >= 92%) -> seed_test.py, read the seeds -> ramp   <- GATE 5
               hypothesis + kill rule written BEFORE the first send
 8 CONVERT     booking link at the yes, same day; phone/text within 24h; LinkedIn connect
-9 READ        hand-classify every reply; yes-rate by segment / signal / size; CRM sync, rescore, re-route
+9 READ        monitor.py every morning + replies.py; hand-classify every reply; yes-rate by segment / signal / size; CRM sync, rescore, re-route
 ```
 
 ## Gates and the lessons behind them

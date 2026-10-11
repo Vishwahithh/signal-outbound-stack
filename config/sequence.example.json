@@ -1,0 +1,9 @@
+{
+  "lead": {"first_name": "Sam", "company": "Example Co", "event": "launched its analytics add-on in September"},
+  "subjects": {"1": "the analytics add-on", "2": "", "3": ""},
+  "bodies": {
+    "1": "Hi {first_name},\n\nSaw {company} {event}. REPLACE with the real email one: words only, no links.\n\nAlex",
+    "2": "REPLACE with the real follow-up. An empty subject keeps it in the same thread.\n\nAlex",
+    "3": "REPLACE with the last short note.\n\nAlex"
+  }
+}

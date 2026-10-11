@@ -7,3 +7,11 @@
 **outcome:**  scripts compile, free steps run on the example config; secret and client-name scans clean
 **status:**   in progress (first 5-row paid test per step still to do)
 **postable:** yes, "the same outbound pipeline with no data subscriptions: about $5 of data for 300 multithreaded contacts"
+
+## 2026-10-11
+**what:**     sending side added: smartlead.py client, inbox_health.py (OFF / LOW / NEVER / CONNECT flags, warmup switch-on), seed_test.py (link/image guard, tracking off, one campaign per inbox), replies.py (quote-stripped buckets, bounce senders, unblocked opt-outs, Attio deals), monitor.py (bounce guard, 92% gate with the half-fleet rule, report only unless --act); deliverability, launch and replies skills
+**why:**      the kit stopped at copy; the sending-side tools only existed in a private, client-specific form
+**broke:**    an "Inbox Zero" cold-email filter notice was sorted OTHER; added to the auto-reply rule
+**outcome:**  read-only live test on a real account: inbox_health listed 57 inboxes (42 OK, 10 CONNECT, 5 NEVER), monitor + replies ran report-only, seed_test dry run passed and refused a bare domain
+**status:**   shipped
+**postable:** yes, "the morning script that pulls a weak inbox before it burns the domain"

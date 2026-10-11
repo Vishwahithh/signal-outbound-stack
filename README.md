@@ -57,9 +57,13 @@ See [PIPELINE.md](PIPELINE.md) for the gates and the lessons behind each one.
 | `scripts/person_research.py` | One dossier per company: buying group, each exec's own LinkedIn posts, the site, the reviewed signal |
 | `scripts/copy_check.py` | Deterministic gate on persona copy |
 | `scripts/render_briefs.py` | Fill the agent briefs from the config, with signal windows as real dates |
+| `scripts/inbox_health.py` | Every sending inbox, worst first: burned domain, connection failing, warmup OFF, reputation under the gate; switches warmup on (dry run by default) |
+| `scripts/seed_test.py` | Sends the real sequence to your own inboxes first: refuses links and images, tracking off, one campaign per inbox, all steps same day |
+| `scripts/replies.py` | Every reply sorted (positive / other / opt-out / out-of-office / departed / auto), quote stripped, bounces caught, unblocked opt-outs flagged, positives to Attio |
+| `scripts/monitor.py` | Morning check: bounce guard, 92% inbox gate (never pulls more than half), replies that need a person; report only unless `--act` |
 | `scripts/attio_*.py` | Attio as the CRM: fields, import, cool-down, nightly score and route, deals |
 | `templates/briefs/` | Agent briefs: grading, signal research, insights, persona copy |
-| `.claude/skills/` | `market-map`, `signal-research` and `person-copy` skills for Claude Code |
+| `.claude/skills/` | `market-map`, `signal-research`, `person-copy`, `deliverability`, `launch` and `replies` skills for Claude Code |
 
 ## Setup
 
@@ -95,6 +99,10 @@ python scripts/person_research.py                            # dossiers for revi
 # insight agents, then persona copy agents, then:
 python scripts/copy_check.py
 python scripts/attio_leads.py setup && python scripts/attio_leads.py import-run && python scripts/attio_score.py
+python scripts/inbox_health.py                               # every inbox OK before launch
+python scripts/seed_test.py --sequence config/sequence.json --inboxes <ids> --send   # then LOOK at the seeds
+python scripts/monitor.py --act                              # every weekday morning, before the send window
+python scripts/replies.py --attio                            # replies that need a person; positives to the CRM
 ```
 
 All output for a run goes to `runs/<run>/`, which is git-ignored, as are `.env` and your client configs.

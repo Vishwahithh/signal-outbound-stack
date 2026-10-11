@@ -109,6 +109,17 @@
     ]
   },
 
+  "sending": {
+    "campaigns": [],
+    "seeds": ["your-gmail@gmail.com", "you@your-workspace-domain.com", "your-outlook@outlook.com"],
+    "optout_text": "If you would rather I did not write again, just reply and say so.",
+    "timezone": "Europe/London",
+    "rep_gate": 92,
+    "bounce_pause_pct": 3,
+    "never_domains": [],
+    "warmup": {"per_day": 10, "rampup": 5, "reply_rate": 30}
+  },
+
   "crm": {
     "owner_email": "you@yourdomain.com",
     "deal_stages": ["Replied yes", "Call booked", "Proposal"],

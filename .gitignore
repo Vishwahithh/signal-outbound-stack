@@ -9,6 +9,7 @@ config/*
 !config/client.example.json
 !config/suppression_domains.example.txt
 !config/voc_bank.example.md
+!config/sequence.example.json
 
 __pycache__/
 *.pyc
