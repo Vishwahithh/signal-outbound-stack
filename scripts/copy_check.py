@@ -31,6 +31,8 @@ def check(r, dossier, proof):
         f.append(f"length {n}")
     if re.search(r"https?://|www\.|\.(com|io|ai|co\.uk|co)\b", e):
         f.append("link/domain")
+    if re.search(r'["”]\.\s+[a-z]', e) or re.search(r"\.\s+[a-z]", e.replace("e.g. ", "").replace("i.e. ", "")):
+        f.append("broken sentence join (full stop then lower case)")
     if "—" in e or "–" in e or "!" in e:
         f.append("dash/exclamation")
     low = e.lower()

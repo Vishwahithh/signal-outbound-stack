@@ -15,6 +15,7 @@
     "geo": ["United Kingdom", "United States"],
     "industries": ["Software Development", "Computer and Network Security"],
     "headcount_ranges": ["51-100", "101-200"],
+    "fit_band": "owner-led and mid-size businesses, roughly GBP 1M-50M revenue; above that is a stretch",
     "disqualifiers": [
       "agencies, dev shops, IT services, MSPs, staffing",
       "resellers and implementation partners of someone else's software",
@@ -91,6 +92,11 @@
        "line": "REPLACE: e.g. won a six-figure deal after revising its product and pricing offer",
        "facts": ["six-figure deal"],
        "solves": "pricing a new or AI product so its first big deals land"}
+    ],
+    "sender_claims": [
+      "I work on pricing and packaging with B2B software companies",
+      "I help companies price new products and tiers",
+      "I help firms raise prices without losing customers"
     ],
     "rules": [
       "facts only: the opener states the dated event, nothing else",

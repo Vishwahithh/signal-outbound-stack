@@ -23,3 +23,11 @@
 **outcome:**  gate tested: "URGENT offer!" fails 4 ways, "acme?" passes
 **status:**   shipped
 **postable:** no
+
+## 2026-10-12
+**what:**     qualify-and-plan step added to the insights brief (history, fit vs config fit_band, owns_pricing, ranked angles, strategy: use / avoid / sender_claim / tone); persona copy bound to it; copy_check catches broken sentence joins; config gets archetype.fit_band + copy.sender_claims
+**why:**      blind 3-way test: the old copy invented sender credentials and unchecked numbers (accurate 2/8); the new step fixed that (8/8)
+**broke:**    the first new email had a broken splice ("... operate". have two ...") that the old gate missed; now a FAIL
+**outcome:**  researched 7.9 vs 7.5, human 5.6 vs 6.0 (dragged by that splice), accurate 8/8 vs 2/8, out-of-market lead correctly skipped
+**status:**   shipped
+**postable:** yes, "making the AI write only facts it could cite cost nothing in quality and fixed every made-up claim"

@@ -51,3 +51,19 @@ preferring one about this person over one about the company. Then:
  "read_first": "one line: what the pricing page shows, 'no pricing page' or 'could not read'"}
 Company insights repeat on each sibling's line. Read each dossier yourself; no scripts. The same file is the call
 prep sheet for whoever takes the meeting.
+
+## Qualify and plan before anyone writes (added after a teardown of an AI SDR's pipeline)
+Add these fields to each person's line. They stop the two faults blind reviewers keep finding: claims about the
+sender that are not true, and numbers nobody checked.
+- history: past contact with this person or company (check the suppression and reply files), or "none".
+- fit: "good" | "stretch" | "out" against {{FIT_BAND}}, with fit_reason from evidence (headcount, revenue, funding,
+  valuation). "out" sets tier to "skip".
+- owns_pricing: "yes" | "shares" | "no" with one line of evidence; if not "yes", name who does and aim the angle at
+  what this person owns (finance: margin and cash; product: plan contents; revenue: the quote and discounting).
+- angles: three candidates, best first, each with the dated evidence it rests on and why the losers lost.
+- strategy:
+  - use: every number, date and quote the email may state, copied verbatim with its source. Leave ambiguous figures out.
+  - avoid: what not to say to this person (funding, valuation, layoffs, personal life, old roles, guesses about how
+    they price, any figure not in evidence).
+  - sender_claim: one line chosen ONLY from {{SENDER_CLAIMS}}. Never name a sector the client has no customers in.
+  - tone: how this person writes, from their own posts, and any corporate gloss not to mirror back.

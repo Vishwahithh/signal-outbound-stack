@@ -31,6 +31,8 @@ def values(cfg):
                            + (f"\n      fixed, must appear exactly: {', '.join(p['facts'])}" if p.get("facts") else "")
                            for p in cfg["copy"]["proof"]),
         "COPY_RULES": "\n".join(f"- {r}" for r in cfg["copy"]["rules"]),
+        "FIT_BAND": a.get("fit_band", "the archetype"),
+        "SENDER_CLAIMS": "; ".join('"%s"' % s for s in cfg["copy"].get("sender_claims", [])) or "a true line about the sender",
         "VOC_BANK": cfg["copy"].get("voc_bank", "config/voc_bank.md"),
     }
 

@@ -39,6 +39,15 @@ angle, the tier, read_first. Ignore the other insights; they lost.
 templates/reference/subject_lines.md (name or company with a question mark, company + topic, open loop that line one
 answers, the event itself). Siblings at one company get different subjects. Never the patterns it lists as out.
 
+## The strategy block is binding
+- tier "skip" or fit "out": output only {"domain", "name", "skipped": "<why>"}.
+- Every number, date and quoted phrase in the email appears verbatim in strategy.use. Nothing else is stated as fact,
+  and no guesses about how they price.
+- Nothing from strategy.avoid. Match strategy.tone.
+- The sender line is strategy.sender_claim, verbatim or shorter. If the proof's sector differs from theirs, bridge on
+  the shared problem ("the same question came up with a SaaS business"), never a claim to work in their sector.
+- If owns_pricing is not "yes", ask about what they own; the close may ask once, plainly, who owns the pricing call.
+
 ## Hard rules
 {{COPY_RULES}}
 - no links or domain-shaped text, no em dashes, no exclamation marks, no praise ("impressive", "great",
