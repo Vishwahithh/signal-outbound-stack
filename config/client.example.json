@@ -1,0 +1,119 @@
+{
+  "run": "example-q4-signal-wave",
+
+  "client": {
+    "name": "Example Pricing Co",
+    "crm_label": "Example Pricing Co",
+    "offer": "pricing and packaging advice for B2B software companies",
+    "why_signals_matter": "a launch, new market, new owner or new leader is the moment a software company has to decide how to package and charge for something",
+    "sender": "Alex Example, founder of Example Pricing Co"
+  },
+
+  "archetype": {
+    "name": "Archetype 1",
+    "description": "B2B software company selling its own product on a subscription or licence model, 51-200 staff, founded in the last 5 years, not private-equity owned",
+    "geo": ["United Kingdom", "United States"],
+    "industries": ["Software Development", "Computer and Network Security"],
+    "headcount_ranges": ["51-100", "101-200"],
+    "disqualifiers": [
+      "agencies, dev shops, IT services, MSPs, staffing",
+      "resellers and implementation partners of someone else's software",
+      "consumer (B2C) apps",
+      "hardware or not tech",
+      "companies being absorbed into their buyer (product shut down or folded in)"
+    ]
+  },
+
+  "contacts": {
+    "title_include": ["CEO", "Chief Executive", "Founder", "Managing Director", "President"],
+    "title_exclude": ["Vice", "Assistant", "Advisor", "Adviser", "Board", "Investor", "Former"],
+    "personas": ["CEO", "Chief Executive", "Founder", "Managing Director", "President"],
+    "per_company": 1
+  },
+
+  "source": {
+    "icypeas_query": {
+      "industry": {"include": ["Software Development", "Computer and Network Security"]},
+      "headcount": {">": 50, "<": 201},
+      "type": {"include": ["Privately Held"]}
+    }
+  },
+
+  "signals_feed": {
+    "hiring_titles": ["Pricing", "Monetization", "Revenue Operations", "Chief Revenue Officer"],
+    "posted": "month",
+    "max_jobs_per_company": 5
+  },
+
+  "email_waterfall": ["kitt", "quickenrich", "icypeas"],
+
+  "site_paths": ["", "/pricing", "/news", "/blog", "/about"],
+
+  "grading": {
+    "A": "B2B software/SaaS with a subscription or licence model visible on the site (public tiers, per user, usage/credits, or a pricing page that says contact sales for plans)",
+    "B": "own B2B tech product, but the pricing model is not visible, or product plus a large services arm",
+    "C": "borderline: mostly services with a small product, customer base unclear, or the site could not be read",
+    "DROP": "anything in the disqualifiers list, or a dead site"
+  },
+
+  "signals": [
+    {"id": "S1", "short": "launch", "name": "new product or module launched", "window_days": 90,
+     "not_a_signal": "a feature, an integration or connector, a point release, a beta or waitlist"},
+    {"id": "S8", "short": "AI launch", "name": "AI feature, agent or copilot launched, or an AI add-on priced", "window_days": 120,
+     "not_a_signal": "a blog post about AI, a 'coming soon' page"},
+    {"id": "S2", "short": "new market", "name": "new country or new market entered", "window_days": 120,
+     "not_a_signal": "a single customer abroad, a reseller agreement"},
+    {"id": "S3", "short": "pricing change", "name": "pricing model or published price change", "window_days": 120,
+     "not_a_signal": "a seasonal discount"},
+    {"id": "S4", "short": "funding", "name": "funding round closed", "window_days": 120,
+     "not_a_signal": "a partner 'commitment', an unfinished bid, a grant application"},
+    {"id": "S5", "short": "new owner", "name": "acquired, merged or PE-invested while still trading under its own brand", "window_days": 180,
+     "not_a_signal": "the company is being absorbed into its buyer's product or brand"},
+    {"id": "S6", "short": "new leader", "name": "new CEO, CRO, CCO, CFO or VP Pricing appointed", "window_days": 120,
+     "not_a_signal": "a promotion below the commercial leadership, a board seat"},
+    {"id": "S7", "short": "hiring", "name": "open role for pricing, RevOps, monetisation, CRO or CCO", "window_days": 0,
+     "not_a_signal": "a closed or expired posting"}
+  ],
+  "signal_priority": ["S1", "S8", "S2", "S3", "S5", "S6", "S4", "S7"],
+
+  "copy": {
+    "voc_bank": "config/voc_bank.md",
+    "proof": [
+      {"id": "price_rise", "descriptor": "an enterprise platform business",
+       "line": "REPLACE: one real, client-approved result, e.g. 15% more revenue from a targeted price increase, no key accounts lost",
+       "facts": ["enterprise platform", "15%", "key accounts"],
+       "solves": "raising prices on an existing base without losing customers; renewals; fear of churn"},
+      {"id": "tiers", "descriptor": "a SaaS business",
+       "line": "REPLACE: e.g. conversion up 17% and new customers up 10% after replacing a single price with clear tiers",
+       "facts": ["17%", "10%", "tiers"],
+       "solves": "packaging: what is in the base plan and what is paid extra; a new module that needs a place in the plans"},
+      {"id": "new_product", "descriptor": "a software business",
+       "line": "REPLACE: e.g. won a six-figure deal after revising its product and pricing offer",
+       "facts": ["six-figure deal"],
+       "solves": "pricing a new or AI product so its first big deals land"}
+    ],
+    "rules": [
+      "facts only: the opener states the dated event, nothing else",
+      "never judge or describe the prospect's pricing; scraped pricing data is internal only",
+      "no links, no images, no tracking pixel in email one",
+      "no em dashes, no exclamation marks, no praise words, no congratulations",
+      "write company names as people say them (Builder, not Builder.io)"
+    ]
+  },
+
+  "suppression": {
+    "domain_files": ["config/suppression_domains.txt"],
+    "csv_files": [
+      {"path": "config/customers.csv", "column": "domain"},
+      {"path": "config/already_contacted.csv", "column": "email"}
+    ]
+  },
+
+  "crm": {
+    "owner_email": "you@yourdomain.com",
+    "deal_stages": ["Replied yes", "Call booked", "Proposal"],
+    "deal_sources": ["Email", "LinkedIn", "Referral", "Other"],
+    "cooldown_days": {"cooldown": 90, "not_now": 90, "negative": 365},
+    "score": {"headcount": [11, 200]}
+  }
+}

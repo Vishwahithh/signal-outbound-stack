@@ -1,0 +1,4 @@
+# One domain per line: customers, competitors, partners, anyone who must never be prospected. Comments after #.
+# Copy to config/suppression_domains.txt (git-ignored).
+example-customer.com
+example-competitor.com  # competitor
