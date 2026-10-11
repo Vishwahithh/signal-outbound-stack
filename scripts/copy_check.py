@@ -3,8 +3,8 @@
 Reads runs/<run>/copy/*.jsonl (one JSON line per person, the shape in templates/briefs/persona_copy.md) and the
 dossiers in runs/<run>/dossiers/. Checks per email: 55-90 words; no links or domains, em dashes, exclamation marks or
 banned phrases; the chosen proof line present verbatim (proof list from the client config); every why_now fact has a
-date and a source; a month name or one of the person's own quoted phrases actually appears in the email; subject 2-4
-words; LinkedIn note under 200 characters with no pitch words; the person exists in the dossier; greeting "Hi <name>,".
+date and a source; a month name or one of the person's own quoted phrases actually appears in the email; subject 1-4
+words, no all-caps or sales words; LinkedIn note under 200 characters with no pitch words; the person exists in the dossier; greeting "Hi <name>,".
 
     python scripts/copy_check.py ["*.jsonl"]     -> PASS/FAIL per person, writes runs/<run>/copy/copy_check.csv
 """
@@ -16,6 +16,7 @@ BANNED = ["congrat", "impressive", "great ", "exciting", "i hope this", "quick q
           "hope you", "just checking", "reaching out", "touch base", "leverage", "synerg", "i'm curious", "i am curious", "i noticed"]
 MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
 PITCH = ["call", "outline", "help you", "offer", "sent you", "my email", "free"]
+SUBJECT_BAN = ["offer", "discount", "free", "deal", "cost", "urgent", "re:", "fwd:", "!"]  # templates/reference/subject_lines.md
 
 
 def words(s):
@@ -50,8 +51,12 @@ def check(r, dossier, proof):
     if not any(m in low for m in MONTHS) and not any(q and q.lower() in low for q in (r.get("own_words") or [])):
         f.append("no dated fact or quote in email")
     sw = len(words(r.get("subject") or ""))
-    if not 2 <= sw <= 4:
+    if not 1 <= sw <= 4:
         f.append(f"subject {sw} words")
+    subj = r.get("subject") or ""
+    if any(w.isupper() and len(w) >= 4 for w in re.findall(r"[A-Za-z]+", subj)):
+        f.append("subject has an all-caps word")
+    f += [f"subject uses '{b}'" for b in SUBJECT_BAN if b in subj.lower()]
     li = r.get("li_note") or ""
     if len(li) >= 200 or any(p in li.lower() for p in PITCH):
         f.append("li_note length/pitch")

@@ -15,3 +15,11 @@
 **outcome:**  read-only live test on a real account: inbox_health listed 57 inboxes (42 OK, 10 CONNECT, 5 NEVER), monitor + replies ran report-only, seed_test dry run passed and refused a bare domain
 **status:**   shipped
 **postable:** yes, "the morning script that pulls a weak inbox before it burns the domain"
+
+## 2026-10-11
+**what:**     subject-line guide (templates/reference/subject_lines.md): patterns that fit the rules (lower case, name/company?, company + topic, open loop answered in line one, the event, problem, quarter, referral) and the ones left out on purpose (cut-off cliffhangers, fake familiarity, LinkedIn hobbies, caps, sales words); wired into both copy briefs; copy_check now fails all-caps and sales words in subjects and allows 1-word subjects
+**why:**      Vish shared a subject-line swipe file to add to the system
+**broke:**    the gate's 2-word minimum rejected the guide's own "Acme?" pattern; now 1-4 words
+**outcome:**  gate tested: "URGENT offer!" fails 4 ways, "acme?" passes
+**status:**   shipped
+**postable:** no

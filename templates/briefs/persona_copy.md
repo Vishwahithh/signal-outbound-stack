@@ -34,6 +34,11 @@ angle, the tier, read_first. Ignore the other insights; they lost.
 - Hyper-personal test for every line: could it go to anyone at another company unchanged? Then rewrite it.
 - Accuracy: every fact matches the evidence it comes from; "so", "which means", "now that" only for a real cause.
 
+## Subject
+1-4 words, lower case except names, tied to the chosen insight. Pick a pattern from
+templates/reference/subject_lines.md (name or company with a question mark, company + topic, open loop that line one
+answers, the event itself). Siblings at one company get different subjects. Never the patterns it lists as out.
+
 ## Hard rules
 {{COPY_RULES}}
 - no links or domain-shaped text, no em dashes, no exclamation marks, no praise ("impressive", "great",
@@ -46,7 +51,7 @@ angle, the tier, read_first. Ignore the other insights; they lost.
 ## Output: one JSON line per person, appended to {{RUN_DIR}}/copy/<your batch>.jsonl
 {"domain": "...", "name": "...", "title": "...", "persona": "...", "tier": "...", "insight_used": "...",
  "why_now": [{"fact": "...", "date": "YYYY-MM-DD", "source": "..."}], "own_words": ["..."], "proof_id": 0,
- "subject": "2-4 words, lower case except names", "email_1": "...", "li_note": "under 200 chars, no pitch",
+ "subject": "1-4 words, lower case except names", "email_1": "...", "li_note": "under 200 chars, no pitch",
  "skipped": null}
 why_now = the chosen insight's evidence. Write every line yourself. Then run `python scripts/copy_check.py` and fix
 every FAIL before a reviewer reads anything.

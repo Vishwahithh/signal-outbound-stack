@@ -21,7 +21,8 @@ For each lead write four things and append one JSON line straight away to the ou
    no "quick question". Do not repeat the opener's wording.
 3. proof_id: the ONE proof closest to their business (numbers are fixed, never change them):
 {{PROOF}}
-4. subject: 2-4 words, lower case except names.
+4. subject: 1-4 words, lower case except names, one pattern from templates/reference/subject_lines.md that points
+   at this email's own topic. No cut-off-word tricks, no fake familiarity, no sales words.
 
 Rules:
 {{COPY_RULES}}
