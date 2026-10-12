@@ -78,6 +78,7 @@
   "signal_priority": ["S1", "S8", "S2", "S3", "S5", "S6", "S4", "S7"],
 
   "copy": {
+    "framework": "written_outline",
     "voc_bank": "config/voc_bank.md",
     "proof": [
       {"id": "price_rise", "descriptor": "an enterprise platform business",

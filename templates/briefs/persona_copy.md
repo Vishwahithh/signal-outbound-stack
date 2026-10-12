@@ -13,6 +13,14 @@ angle, the tier, read_first. Ignore the other insights; they lost.
   the person, no own_words.
 - tier "skip": output {"domain", "name", "skipped": "tier skip"} only.
 
+## Framework for this run (shape, not script)
+{{FRAMEWORK}}
+
+If a framework is set above, write every email in its order and fill each slot from the chosen insight and
+strategy.use only. A required slot with no matching fact means the person is skipped ("skipped": "no fact for
+<slot>"), never padded. Write the whole email in one pass, then read it aloud: never fill slots one at a time and join
+them. Where the framework and the rules below disagree, the rules below win.
+
 ## The email (email_1): 55-80 words, "Hi <first>," signed with the sender's first name
 1. Line one: the insight, said as a peer would say it, with the dated fact inside it as a clause (month named). If
    own_words exist, use them exactly, in quotes, as "you wrote"/"you said" with the month. Never "<Company>

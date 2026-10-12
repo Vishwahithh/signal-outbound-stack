@@ -11,6 +11,17 @@ import datetime, re
 from common import ROOT, config, run_dir
 
 
+def framework(cfg):
+    """The chosen email shape (templates/frameworks/<name>.md), or a note that the brief's default shape applies."""
+    name = cfg["copy"].get("framework")
+    if not name:
+        return "None chosen: use the email shape described below."
+    f = ROOT / "templates" / "frameworks" / f"{name}.md"
+    if not f.exists():
+        raise SystemExit(f"copy.framework '{name}' not found in templates/frameworks/")
+    return f.read_text(encoding="utf-8").strip()
+
+
 def values(cfg):
     today = datetime.date.today()
     a, c = cfg["archetype"], cfg["client"]
@@ -34,6 +45,7 @@ def values(cfg):
         "FIT_BAND": a.get("fit_band", "the archetype"),
         "SENDER_CLAIMS": "; ".join('"%s"' % s for s in cfg["copy"].get("sender_claims", [])) or "a true line about the sender",
         "VOC_BANK": cfg["copy"].get("voc_bank", "config/voc_bank.md"),
+        "FRAMEWORK": framework(cfg),
     }
 
 
